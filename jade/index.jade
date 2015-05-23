@@ -1,0 +1,46 @@
+include includes/vars
+include includes/mixins
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Логотип - инжиниринговая компания
+		link(rel="stylesheet" href="styles/styles.css")
+	body
+		.wrapper
+			header.header
+				.header_top
+					a.logo(href="#" title="Логотип")
+						.logo_title Логотип
+						.logo_text Инжиниринговая компания
+					form.search_form(action="" method="post")
+						+input(search)
+						+input(search_go)
+				.nav
+					.nav_menu Меню
+					ul.nav_list
+						.close_menu
+						each val in nav
+							li.nav_item
+								if (val==="Партнеры")
+									a.nav_link.active(href="#" title=val)= val
+								else
+									a.nav_link(href="#" title=val)= val
+			.slider
+				ul.bxslider
+					- for (var i=0; i<5; i++)
+						li.bxslider_item
+							.bxslider_item_wrap
+								.bxslider_small_title Наши компетенции
+								.bxslider_title Объекты	химической промышленности
+								.bxslider_text Важнейшим преимуществом компании является способность проектировать и строить «под ключ». При этом данные процессы ведутся одновременно, что позволяет заказчику значительно сократить общий строительный цикл объекта.
+			.services
+				ul.services_list
+					- for (var i=0; i<services.length; i++)
+						li.services_item
+							a(class="services_link_"+i href="#" title=services[i])= services[i]
+		script(src="js/jquery-1.11.1.min.js")
+		script(src="js/jquery.bxslider.min.js")
+		script(src="js/scripts.js")
