@@ -1,0 +1,5 @@
+.services
+	ul.services_list
+		- for (var i=0; i<services.length; i++)
+			li.services_item
+				a.services_link(class="services_link_"+i href="#" title=services[i])= services[i]

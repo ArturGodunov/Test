@@ -1,0 +1,40 @@
+.nav{
+	margin: 18px 0 0;
+	height: 44px;
+	position: relative;
+	&::before{
+		content: "";
+		display: block;
+		width: 1000vw;
+		border-top: 1px solid $color_nav_border;
+		position: absolute;
+		top: 0;
+		left: -100vw;
+	}
+}
+.nav_menu{
+	display: none;
+}
+.nav_list{
+	@extend %clearfix;
+}
+.nav_item{
+	float: left;
+}
+.nav_link{
+	text-decoration: none;
+	font: 1.5rem/1 Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	color: $color_nav_text;
+	display: inline-block;
+	line-height: 44px;
+	padding: 0 20px;
+	&:hover, &.active{
+		color: #fff;
+		box-shadow: 0 1px 1px transparentize(#000, 0.7);
+		background: $color_logo_title;
+	}
+	&.active{
+		background: $color_nav_active_bg;
+	}
+}

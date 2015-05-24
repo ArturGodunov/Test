@@ -9,10 +9,10 @@ $(document).ready(function() {
 
 function showMenu(){
     var navList=$(".nav_list");
-    $(".nav_menu").on("click", function() {
-        navList.show();
-    });
-    $(".nav_close").on("click", function() {
-        navList.hide();
-    });
+        $(".nav_menu").on("click", function () {
+            navList.toggleClass("expanded");
+        });
+        $(".nav_close").on("click", function () {
+            navList.removeClass("expanded");
+        });
 }

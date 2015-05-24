@@ -1,0 +1,10 @@
+.nav
+	.nav_menu Меню
+	ul.nav_list
+		.nav_close
+		each val in nav
+			li.nav_item
+				if (val==="Партнеры")
+					a.nav_link.active(href="#" title=val)= val
+				else
+					a.nav_link(href="#" title=val)= val
